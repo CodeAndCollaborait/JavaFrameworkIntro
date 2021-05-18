@@ -1,9 +1,12 @@
 package com.designpattern.JavaDesignPattern;
 
+import com.designpattern.JavaDesignPattern.IntroToSpring.ApplicationConfig;
+import com.designpattern.JavaDesignPattern.IntroToSpring.SendMessage;
 import com.designpattern.JavaDesignPattern.designPattern.SingletonIntro;
 import com.designpattern.JavaDesignPattern.model.Employee;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @SpringBootApplication
 public class JavaDesignPatternApplication {
@@ -25,6 +28,16 @@ public class JavaDesignPatternApplication {
 	  System.out.println(intro2.hashCode());
 	  System.out.println(intro.equals(intro2));
 	  
+	  AnnotationConfigApplicationContext context
+			  = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+	  
+	  SendMessage message = context.getBean(SendMessage.class);
+	  System.out.println(message.hashCode());
+	  System.out.println(message.getMessage());
+	  
+	  message.setMessage("Some other message");
+	  System.out.println(message.getMessage());
+	  System.out.println(message.hashCode());
 		SpringApplication.run(JavaDesignPatternApplication.class, args);
 	}
 
