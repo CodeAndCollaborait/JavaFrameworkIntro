@@ -2,6 +2,8 @@ package com.designpattern.JavaDesignPattern;
 
 import com.designpattern.JavaDesignPattern.IntroToSpring.ApplicationConfig;
 import com.designpattern.JavaDesignPattern.IntroToSpring.SendMessage;
+import com.designpattern.JavaDesignPattern.designPattern.Factory_Pattern.IntroToFactory;
+import com.designpattern.JavaDesignPattern.designPattern.Factory_Pattern.Vehicle;
 import com.designpattern.JavaDesignPattern.designPattern.SingletonIntro;
 import com.designpattern.JavaDesignPattern.model.Employee;
 import org.springframework.boot.SpringApplication;
@@ -38,7 +40,25 @@ public class JavaDesignPatternApplication {
 	  message.setMessage("Some other message");
 	  System.out.println(message.getMessage());
 	  System.out.println(message.hashCode());
-		SpringApplication.run(JavaDesignPatternApplication.class, args);
+	  SpringApplication.run(JavaDesignPatternApplication.class, args);
+
+
+		// ----------------- IntroToFactory demo ---------------------
+
+		//
+		IntroToFactory vehicleFactory = new IntroToFactory();
+
+		// get an object of Motorcycle
+		Vehicle motorcycle = vehicleFactory.getVehicle("Motorcycle");
+		motorcycle.vehicleInfo();		// call Motorcycle's vehicleInfo method
+
+		// get an object of Truck
+		Vehicle truck = vehicleFactory.getVehicle("truck");
+		truck.vehicleInfo();		// call Truck's vehicleInfo method
+
+		// get an object of Automobile
+		Vehicle automobile = vehicleFactory.getVehicle("Automobile");
+		automobile.vehicleInfo();		// call Automobile's vehicleInfo method 
 	}
 
 }
