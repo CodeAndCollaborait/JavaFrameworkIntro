@@ -1,5 +1,7 @@
 package com.designpattern.JavaDesignPattern;
 
+import com.designpattern.JavaDesignPattern.DI.MessageService;
+import com.designpattern.JavaDesignPattern.DI.SpringDI_Intro;
 import com.designpattern.JavaDesignPattern.IntroToSpring.ApplicationConfig;
 import com.designpattern.JavaDesignPattern.IntroToSpring.SendMessage;
 import com.designpattern.JavaDesignPattern.designPattern.Factory_Pattern.IntroToFactory;
@@ -41,11 +43,18 @@ public class JavaDesignPatternApplication {
 	  System.out.println(message.getMessage());
 	  System.out.println(message.hashCode());
 	  SpringApplication.run(JavaDesignPatternApplication.class, args);
-
+	  
+	  
+	  
+	  
+//	  context = new AnnotationConfigApplicationContext(SpringDI_Intro.class);
+//	  MessageService messageService = context.getBean(MessageService.class);
+//	  messageService.sendMessage("This is my text message");
+//
 
 		// ----------------- IntroToFactory demo ---------------------
 
-		//
+//		//
 		IntroToFactory vehicleFactory = new IntroToFactory();
 
 		// get an object of Motorcycle
@@ -58,7 +67,7 @@ public class JavaDesignPatternApplication {
 
 		// get an object of Automobile
 		Vehicle automobile = vehicleFactory.getVehicle("Automobile");
-		automobile.vehicleInfo();		// call Automobile's vehicleInfo method 
+		automobile.vehicleInfo();		// call Automobile's vehicleInfo method
 	}
 
 }
