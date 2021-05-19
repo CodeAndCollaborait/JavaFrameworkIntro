@@ -10,6 +10,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import javax.swing.*;
+import java.util.Scanner;
+
 @SpringBootApplication
 public class JavaDesignPatternApplication {
 
@@ -45,20 +48,40 @@ public class JavaDesignPatternApplication {
 
 		// ----------------- IntroToFactory demo ---------------------
 
+		String type = "";
+		String companyName = "";
+		String model = "";
+		String power = "";
+		String color = "";
+
+		System.out.println("Enter car type : ");
+		Scanner scanner = new Scanner(System.in);
+		type = scanner.nextLine();
+
+		System.out.println("Enter company name :");
+		companyName = scanner.nextLine();
+
+		System.out.println("Enter car model : ");
+		model = scanner.nextLine();
+
+		System.out.println("Enter car power : ");
+		power = scanner.nextLine();
+
+		System.out.println("Enter car color : ");
+		color = scanner.nextLine();
+
+		/*type = JOptionPane.showInputDialog("Enter Car type : ");
+		companyName = JOptionPane.showInputDialog("Enter company name");
+		model = JOptionPane.showInputDialog("Enter car model ");
+		power = JOptionPane.showInputDialog("Enter car power ");
+		color = JOptionPane.showInputDialog("Enter car color ");*/
+
 		//
 		IntroToFactory vehicleFactory = new IntroToFactory();
+		Vehicle carType = vehicleFactory.getVehicle(type,companyName,model,power,color);
+		carType.vehicleInfo();
+		System.out.println("Car description \n" + carType);
 
-		// get an object of Motorcycle
-		Vehicle motorcycle = vehicleFactory.getVehicle("Motorcycle");
-		motorcycle.vehicleInfo();		// call Motorcycle's vehicleInfo method
-
-		// get an object of Truck
-		Vehicle truck = vehicleFactory.getVehicle("truck");
-		truck.vehicleInfo();		// call Truck's vehicleInfo method
-
-		// get an object of Automobile
-		Vehicle automobile = vehicleFactory.getVehicle("Automobile");
-		automobile.vehicleInfo();		// call Automobile's vehicleInfo method 
 	}
 
 }
