@@ -19,6 +19,10 @@ public class IntroToPrototype {
         System.out.println(a.getVehicleList());
         System.out.println(list);
         System.out.println(list1);
+        
+        System.out.println(a.hashCode());
+        System.out.println(b.hashCode());
+        System.out.println(c.hashCode());
     }
 }
     class Vehicle implements Cloneable {
@@ -51,7 +55,7 @@ public class IntroToPrototype {
             for(String s : this.getVehicleList()) {
                 tempList.add(s);
             }
-
+            
             return new Vehicle(tempList);
         }
     }

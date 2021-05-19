@@ -50,7 +50,7 @@ public class JavaDesignPatternApplication {
 
 		// get an object of Motorcycle
 		Vehicle motorcycle = vehicleFactory.getVehicle("Motorcycle");
-		motorcycle.vehicleInfo();		// call Motorcycle's vehicleInfo method
+		motorcycle.vehicleInfo();// call Motorcycle's vehicleInfo method
 
 		// get an object of Truck
 		Vehicle truck = vehicleFactory.getVehicle("truck");
