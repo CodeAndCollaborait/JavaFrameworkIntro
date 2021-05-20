@@ -6,8 +6,13 @@ public class CalculatorAdapter implements Base {
     MultiplyCalculator calculator;
     SumCalculator sumCalculator;
 
-    public CalculatorAdapter(MultiplyCalculator newCalculator) {
+    public CalculatorAdapter(){
+        calculator = new MultiplyCalculator();
+        sumCalculator = new SumCalculator();
+    }
+    public CalculatorAdapter(MultiplyCalculator newCalculator, SumCalculator newCalculator2) {
         calculator = newCalculator;
+        sumCalculator = newCalculator2;
     }
 
     int sum = 0;
@@ -24,5 +29,13 @@ public class CalculatorAdapter implements Base {
         calculator.sum = num;
         int min = calculator.multNum(-1);
         return sum + min;
+    }
+
+    public int multNum(int num){
+        return calculator.multNum(num);
+    }
+
+    public  int divNum(int num){
+        return calculator.divNum(num);
     }
 }
